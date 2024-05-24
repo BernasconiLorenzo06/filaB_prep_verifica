@@ -28,15 +28,27 @@ export class AppComponent {
   //funzione che inizializza get data
   getData = (d:vegetableList[]) => {
     this.listaVerdure = d;
+    for (let mezzo of this.listaVerdure) {
+      this.verdureSelezionate.push(new cart_product(mezzo))
+      console.log(this.verdureSelezionate)
   }
-
+  }
+  //visualizza i dettagli nella console
   aggiungi(verdura: vegetableList): boolean {
     console.log(verdura.nome)
     console.log(verdura.descrizione)
     console.log(verdura.prezzo)
     this.selezionato = true; //visualizza componente
     this.verduraSelezionata = verdura; //seleziona il mezzo
+   //iniziallizzo mezzo noleggiato
+    let mezzoNoleggiato = new cart_product(this.verduraSelezionata)
+   //aumento il numero di noleggi del veicolo noleggiato
+    for (let mezzo of this.verdureSelezionate) {
+      if (mezzo.verdura.nome == mezzoNoleggiato.verdura.nome) {
+        mezzo.acquistato()
+      }
+    }
     return false
   }
-
 }
+

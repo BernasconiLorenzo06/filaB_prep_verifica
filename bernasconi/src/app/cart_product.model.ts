@@ -9,4 +9,9 @@ export class cart_product {
     constructor(verdura:vegetableList ) {
         this.verdura = verdura
     }
+
+    acquistato(): void{
+        this.acquisti += 1
+    }
+
 }
