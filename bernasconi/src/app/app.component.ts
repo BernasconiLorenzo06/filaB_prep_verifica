@@ -25,4 +25,12 @@ export class AppComponent {
   getData = (d:vegetableList[]) => {
     this.listaVerdure = d;
   }
+
+  aggiungi(verdura: vegetableList): boolean {
+    console.log(verdura.nome)
+    console.log(verdura.descrizione)
+    console.log(verdura.prezzo)
+    return false
+  }
+
 }

@@ -1,5 +1,5 @@
 <div *ngFor = 'let verdura of listaVerdure'>
   <app-vegetable-list [verdura] = 'verdura'></app-vegetable-list>
-  <button>Aggiungi</button>
-  <input type="number" name="prodotti">
+  <button (click) = 'aggiungi(verdura)'>Aggiungi</button>
+  <input type="number" name="prodotti" id="prodotti">
 </div>
