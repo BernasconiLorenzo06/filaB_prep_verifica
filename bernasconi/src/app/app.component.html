@@ -2,4 +2,5 @@
   <app-vegetable-list [verdura] = 'verdura'></app-vegetable-list>
   <button (click) = 'aggiungi(verdura)'>Aggiungi</button>
   <input type="number" name="prodotti" id="prodotti">
+  <app-details [verduraSelezionata] = 'verduraSelezionata' *ngIf ='selezionato'></app-details>
 </div>

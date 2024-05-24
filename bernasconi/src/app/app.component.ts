@@ -10,6 +10,9 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   listaVerdure !: vegetableList[];
   obserVerdure !: Observable<vegetableList[]>;
+  selezionato: boolean = false; //serve per evitare il problema che lui non trovi l'auto selezionata
+  verduraSelezionata !: vegetableList;
+
   constructor(public http: HttpClient) {} //serve a inizializzare proprieta classe
 
 
@@ -30,6 +33,8 @@ export class AppComponent {
     console.log(verdura.nome)
     console.log(verdura.descrizione)
     console.log(verdura.prezzo)
+    this.selezionato = true; //visualizza componente
+    this.verduraSelezionata = verdura; //seleziona il mezzo
     return false
   }
 
