@@ -34,10 +34,11 @@ export class AppComponent {
   }
   }
   //visualizza i dettagli nella console
-  aggiungi(verdura: vegetableList): boolean {
+  aggiungi(verdura: vegetableList,numeroprodotti:HTMLInputElement): boolean {
     console.log(verdura.nome)
     console.log(verdura.descrizione)
     console.log(verdura.prezzo)
+    console.log(numeroprodotti.value)
     this.selezionato = true; //visualizza componente
     this.verduraSelezionata = verdura; //seleziona il mezzo
    //iniziallizzo mezzo noleggiato
@@ -45,7 +46,7 @@ export class AppComponent {
    //aumento il numero di noleggi del veicolo noleggiato
     for (let mezzo of this.verdureSelezionate) {
       if (mezzo.verdura.nome == mezzoNoleggiato.verdura.nome) {
-        mezzo.acquistato()
+        mezzo.acquistato(Number(numeroprodotti.value))
       }
     }
     return false

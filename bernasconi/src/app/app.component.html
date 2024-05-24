@@ -1,6 +1,8 @@
 <div *ngFor = 'let verdura of listaVerdure'>
   <app-vegetable-list [verdura] = 'verdura'></app-vegetable-list>
-  <button (click) = 'aggiungi(verdura)'>Aggiungi</button>
-  <input type="number" name="prodotti" id="prodotti">
-  <app-details [verduraSelezionata] = 'verduraSelezionata' *ngIf ='selezionato'></app-details>
+  <button (click) = 'aggiungi(verdura,numeroprodotti)'>Aggiungi</button>
+  <input type="number" name="prodotti" id="prodotti"  #numeroprodotti>
+  
 </div>
+<app-details [verduraSelezionata] = 'verduraSelezionata' *ngIf ='selezionato'></app-details>
+<app-carrello [verdureSelezionate] = 'verdureSelezionate'></app-carrello>
