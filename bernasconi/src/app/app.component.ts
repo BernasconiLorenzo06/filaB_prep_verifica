@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { vegetableList } from './vegetables.model';
 import { Observable } from 'rxjs';
+import { cart_product } from './cart_product.model'; // importo la classe
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,7 @@ export class AppComponent {
   obserVerdure !: Observable<vegetableList[]>;
   selezionato: boolean = false; //serve per evitare il problema che lui non trovi l'auto selezionata
   verduraSelezionata !: vegetableList;
-
+  verdureSelezionate : cart_product[] = []; //creo il vettore
   constructor(public http: HttpClient) {} //serve a inizializzare proprieta classe
 
 
